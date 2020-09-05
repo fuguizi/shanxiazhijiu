@@ -11,14 +11,13 @@ $(function () {
 
     // 2.1注册密码校验规则
     // layui是自动注入的对象
-    // (对表单的验证进行了支持，只需要在表单元素上加上 lay - verify="" 属性值即可)
     // 必须给表单体系所在的父元素加上class="layui-form"
     // 用form变量接收layui里的form
     var form = layui.form;
     // 通过form.verify()函数自定义校验规则
     form.verify({
         // 自定义pwd的校验规则
-        // 自定义规则加进密码lay-verify里用（2个） |pwd
+        // 自定义规则加进密码lay-verify里（3个） |pwd
         "pwd": [
             // 非空格，6-12位之间
             /^[\S]{6,12}$/,
@@ -31,6 +30,7 @@ $(function () {
             var pwd = $(".reg-box [name=password]").val()
             //   如果密码的值pwd 不等于确认密码的值
             if (pwd !== value) {
+                // 如果判断失败提示错误消息
                 return "两次密码不一致"
             }
         }
