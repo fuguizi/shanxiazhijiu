@@ -68,9 +68,9 @@ $(function () {
                 }
                 layer.msg("登陆成功！")
                 // 获取token 并保存出来
-                console.log(res.token)
+                // console.log(res.token)
 
-                // 跳转到后台主页
+                // 如果登陆正确，跳转到后台主页
                 location.href = "/index.html"
             }
 
